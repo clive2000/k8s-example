@@ -1,0 +1,6 @@
+```
+kubectl expose deployment hello-world --type=NodePort --name=example-service
+kubectl get svc
+```
+
+如果使用minikube，expose 到 nodeport的service，会在node本机打通一个端口，然后可以使用`minikube profile list`命令列出集群的ip，然后使用ip:noderport访问

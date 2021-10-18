@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-client
+spec:
+  selector:
+    matchLabels:
+      editor: vscode
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        editor: vscode
+    spec:
+      containers:
+      - name: mongo
+        image: mongo:4.2
