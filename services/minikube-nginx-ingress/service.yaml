@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  minikube-ingress
+spec:
+  selector:
+    run:  hello-app
+  type: NodePort
+  ports:
+  - name:  exposer8080
+    port:  8080

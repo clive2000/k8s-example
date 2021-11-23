@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minikube-ingress
+  labels:
+    app : minikube-ingress
+spec:
+  selector:
+    matchLabels:
+      run : hello-app
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        run: hello-app
+    spec:
+      containers:
+      - name: hello-app
+        image: anjia0532/google-samples.hello-app:1.0
+        ports:
+          - containerPort : 8080
+            protocol : TCP
